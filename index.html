@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>d3n4ik pl3as3 n3v3r stop</TITLE>
+<STYLE>
+.header {
+  border: 5px outset violet;
+  background-color: pink;
+  text-align: center;
+}
+.portrait{
+  text-align: center;
+  color: pink;
+  background-image: url('images/bg.gif');
+}
+.fact_list{
+  background-color: pink;
+  font-size: 25px;
+  color: black;
+}
+.row {
+  display: flex;
+}
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV class="header">
+  <H3>Это сайт одного из мночисленных Шахов, бередящих планету, в надежде найти то самое...</H3>
+</DIV>
+
+<DIV class="portrait">
+  <H1> Денис Шах</H1>
+  <IMG src="images/main_shakh.jpg" alt="Shakh rule">
+</DIV>
+
+<DIV class="fact_list">
+<UL>
+  <LI>Белорусский романтик с итальянскими метакорнями</LI>
+  <LI>Вечно ищущий пакет</LI>
+  <LI>Поэт и песенник</LI>
+  <LI>Обладатель тысячи и <B>одного</B> костюма</LI>
+  <LI>Чемпион по настолкам</LI>
+  <LI>Брат (скорее всего сводный) Анджелины Джоули</LI>
+  <LI>Активный миссионер банковской системы</LI>
+  <LI>Коленопреклонник</LI>
+  <LI>Действующий инженер</LI>
+  <LI>Обожатель гигантских оливок</LI>
+  <LI>Ну и, конечно же, корень зла</LI>
+</UL>
+</DIV>
+
+<DIV>
+<script type="text/javascript">
+var message = "35 не 40";
+var base_color = "#D50000";
+var style = "text-align: center; color:' + base_color + '; font-size: 100px;";
+var color1 = "magenta";
+var color2 = "green";
+var flashspeed = 99;
+var flashingletters = 2;
+var flashingletters2 = 2;
+var flashpause = 0;
+var n = 0;
+if (document.all||document.getElementById){
+   document.write('<DIV style="'+style+'">')
+   for (m=0; m<message.length; m++)
+   document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+   document.write('</DIV>')
+}
+else document.write(message)
+
+function crossref(number){
+   var crossobj=document.all? eval("document.all.neonlight"+number) :
+   document.getElementById("neonlight"+number)
+   return crossobj
+}
+
+function neon(){
+   if (n==0){
+    for (m=0; m<message.length; m++)
+    crossref(m).style.color=base_color
+    }
+   crossref(n).style.color=color1
+   if (n>flashingletters-1) { crossref(n-flashingletters).style.color=color2 }
+   if (n>(flashingletters+flashingletters2)-1) {
+   crossref(n-flashingletters-flashingletters2).style.color=base_color }
+   if (n<message.length-1) { n++ }
+   else{
+    n=0
+    clearInterval(flashing)
+    setTimeout("start_color()",flashpause)
+    return
+    }
+}
+function start_color(){
+   if (document.all||document.getElementById)
+   flashing=setInterval("neon()",flashspeed)
+}
+start_color()
+</script>
+</DIV>
+
+<DIV class="row">
+  <DIV class="column">
+    <IMG src="images/wishes/wish1.gif" alt="С ДНЮХАЙ!!!1" style="width:100%">
+  </DIV>
+  <DIV class="column">
+    <IMG src="images/wishes/wish1.jpg" alt="УРРРА!!" style="width:100%">
+  </DIV>
+  <DIV class="column">
+    <IMG src="images/wishes/wish2.gif" alt="35 бабка ягодка опять" style="width:100%">
+  </DIV>
+</DIV>
+
+<DIV class="anekdot">
+  <P>Дни рождения полезны для здоровья. Британские ученые доказали, что те, у кого было больше дней рождения, жили, как правило, дольше.</P>
+</DIV>
+
+</BODY>
+</HTML>
